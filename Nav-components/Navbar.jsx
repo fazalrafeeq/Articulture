@@ -8,7 +8,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   return (
-    <nav className="absolute top-4 left-0 w-full flex md:top-7 justify-between items-center px-6 md:px-10 py-4 text-white z-30">
+    <nav className=" absolute top-4 left-0 w-full flex md:top-7 justify-between items-center px-6 md:px-10 py-4 text-white z-30">
 
       {/* Logo — optimized for sm + md + lg */}
       <div className="relative w-32 h-10 md:w-30  md:h-12 lg:w-48 lg:h-14">

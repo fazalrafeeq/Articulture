@@ -4,7 +4,7 @@ import { FaPhoneAlt, FaEnvelope, FaFacebookF, FaInstagram, FaLinkedinIn } from "
 
 export default function Topbar() {
   return (
-    <div className="hidden sm:flex fixed w-full z-50 bg-gradient-to-r from-[#243342] via-[#203A43] to-[#2C5364] text-gray-200 text-sm">
+    <div className="hidden sm:flex  w-full z-50 bg-gradient-to-r from-[#243342] via-[#203A43] to-[#2C5364] text-gray-200 text-sm">
       {/* Container with padding but full width */}
       <div className="w-full flex justify-between items-center px-10 py-2">
 
