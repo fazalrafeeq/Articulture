@@ -48,7 +48,7 @@ export default function Hero(){
                 {/* Note: If 'bg-linear-to-r' isn't a custom utility, you'll need to define it or use utility classes 
                     like 'bg-gradient-to-r from-[...] to-[...]'. Assuming it is defined or using standard gradient. */}
                 <button className="bg-gradient-to-r from-[#3CA270] to-[#41ac76] font-medium text-white 
-                                   px-8 py-3 rounded-full 
+                                   px-8 py-3 z-90 rounded-full 
                                    transition-all duration-300 
                                    hover:from-[#337c56] hover:to-[#33734f] 
                                    text-base w-full sm:w-auto">
@@ -57,7 +57,7 @@ export default function Hero(){
 
                 {/* Secondary Button */}
                 <button className="border border-white text-white font-medium 
-                                   px-8 py-3 rounded-full 
+                                   px-8 py-3 z-90 rounded-full 
                                    hover:bg-white hover:text-black 
                                    transition-all duration-300 
                                    text-base w-full sm:w-auto">
