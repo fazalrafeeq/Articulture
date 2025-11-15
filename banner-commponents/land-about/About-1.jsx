@@ -4,7 +4,7 @@ import Image from 'next/image';
 const AboutSection = () => {
   // Define the fixed dimensions using Tailwind's arbitrary value syntax
   // Retaining your original dimensions for MD and LG breakpoints
-  const FIXED_DIMENSIONS_MD = 'w-[324px] h-[500px]';
+ const FIXED_DIMENSIONS_MD = 'w-[300px] h-[500px]' 
    const FIXED_DIMENSIONS_LG = 'w-[325px] h-[565px]';
 
   return (
@@ -51,7 +51,7 @@ const AboutSection = () => {
           </div>
 
           {/* B. IMAGES COLUMN (Right Side) - NEW CAROUSEL TYPE */}
-          <div className="w-full lg:w-2/3">
+          <div className="w-full md:h-1/2 lg:w-2/3">
             {/* The wrapper for the scrolling images: 
                 - flex: Enables side-by-side layout
                 - overflow-x-scroll: Enables horizontal scrolling on small screens
@@ -60,12 +60,12 @@ const AboutSection = () => {
                 - md:grid md:grid-cols-3: Reverts to grid layout on medium screens and up
             */}
             <div className="flex overflow-x-scroll snap-x snap-mandatory space-x-4 pb-4 
-                            md:grid md:grid-cols-3 md:gap-4 md:overflow-x-visible md:space-x-0">
+                            md:grid md:grid-cols-3 md:gap-4 md:overflow-x-hidden md:space-x-0">
               
               {/* 1. First Image (Living Room) - Carousel/Fixed Size */}
               {/* w-4/5 sm:w-11/12 for optimal mobile viewing, snaps to center */}
-              <div className={`flex-shrink-0 w-4/5  md:w-auto md:col-span-1 
-                              h-96 md:${FIXED_DIMENSIONS_MD} lg:${FIXED_DIMENSIONS_LG} relative lg:${FIXED_DIMENSIONS_LG} rounded-lg overflow-hidden snap-center`}>
+              <div className={`flex-shrink-0 w-4/5   md:w-auto md:col-span-1 
+                              h-96  lg:${FIXED_DIMENSIONS_LG} md:w-0.5 relative rounded-lg overflow-hidden snap-center`}>
                   <Image 
                       src="/image/abt-1.png" 
                       alt="Modern Living Room" 
