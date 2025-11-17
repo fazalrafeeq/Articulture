@@ -41,8 +41,7 @@ const ServiceCard = ({ title, imageSrc, description, highlighted }) => {
     const highlightedClasses = `
         bg-gradient-to-r from-[#3CA270] to-[#045B30]
         text-white 
-        shadow-xl 
-        shadow-green-500/50 
+        shadow-xl  
         hover:scale-[1.01] 
         cursor-default
     `;
@@ -95,7 +94,7 @@ export default function ServicesSectionPureCSSScroll() {
     return (
         // NOTE: No "use client" needed here
         <section className="py-16 sm:py-24 bg-gray-50">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
                 
                 {/* Header Section */}
                 <div className="text-center mb-12 sm:mb-16">
@@ -119,7 +118,7 @@ export default function ServicesSectionPureCSSScroll() {
                 </div>
 
                 {/* 2. GRID FOR LARGE SCREENS (lg and up) */}
-                <div className="hidden lg:block"> {/* Show only on large screens and up */}
+                <div className="hidden gap-4 pl-7 pr-8 lg:block"> {/* Show only on large screens and up */}
                     <div className="grid grid-cols-4 gap-8">
                         {services.map((service) => (
                             <div 
