@@ -46,7 +46,7 @@ const AboutSection = () => {
          <p className="text-sm text-gray-500">Sr Architect</p>
         </div>
        </div>
-       <blockquote className="text-gray-600 italic border-l-4 border-green-600 pl-4 py-1">
+       <blockquote className="text-gray-600 italic pl-4 py-1">
         "We envision a world where every space we create enhances the quality of life for its occupants while contributing positively to the environment."
        </blockquote>
       </div>
