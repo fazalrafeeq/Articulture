@@ -1,5 +1,6 @@
 import Hero from "@/banner-commponents/Hero";
 import AboutSection1 from "@/banner-commponents/land-about/About-1";
+import ServicesSection from "@/banner-commponents/land-about/About-2-con";
 import Navbar from "@/Nav-components/Navbar";
 import Topbar from "@/T-bar-components/Topbar";
 
@@ -12,6 +13,7 @@ export default function Home() {
      <Hero/>
       <Navbar/>
        <AboutSection1/>
+       <ServicesSection/>
    </>
    
   );

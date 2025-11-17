@@ -14,7 +14,7 @@ const AboutSection = () => {
    
    {/* Outer Card Container: The main white content block */}
    {/* Increased max-w for better layout at large sizes, as 350px is very small */}
-   <div className="max-w-7xl w-full bg-white rounded-xl shadow-2xl p-6 lg:p-10">
+   <div className="max-w-8xl w-full bg-white rounded-xl shadow-2xl p-6 lg:p-10">
     
     {/* Main Content Layout: Stacks on SM, splits 1/3 (text) and 2/3 (images) on LG */}
     <div className="flex flex-col lg:flex-row gap-8">
