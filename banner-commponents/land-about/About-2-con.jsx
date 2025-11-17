@@ -9,7 +9,7 @@ const services = [
         title: 'Architecture',
         imageSrc: '/image/service-1.png', 
         description: 'At articulate, we believe that every space has a story waiting to be told. Our mission is to shape environments.',
-        highlighted: true,
+        highlighted : true,
     },
     {
         title: 'Interior',
@@ -108,7 +108,7 @@ export default function ServicesSectionPureCSSScroll() {
                 
                 {/* 1. HORIZONTAL SCROLL FOR SMALL SCREENS (sm and below) */}
                 <div className="lg:hidden"> {/* Hide on large screens and up */}
-                    <div className="flex gap-4 overflow-x-scroll pb-4 -mx-4 px-4"> 
+                    <div className="flex gap-4 hover:scale-[1.01]  overflow-x-scroll pb-4 -mx-4 px-4"> 
                         {/* We use negative margins (-mx-4) and positive padding (px-4) 
                             to make the scroll area touch the screen edges while keeping content aligned */}
                         {services.map((service) => (
