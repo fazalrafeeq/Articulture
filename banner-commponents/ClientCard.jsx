@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const clients = [
   { id: 1, imageBlack: "/image/client-1.png", imageWhite: "/image/client-1-2.png" },
@@ -19,7 +19,9 @@ const clients = [
 
 export default function ClientsCarousel() {
   const sliderRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(null);
 
+  // Auto-scroll
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
@@ -51,49 +53,73 @@ export default function ClientsCarousel() {
         "
       >
         {[...clients, ...clients].map((c, index) => (
-          <ClientCard key={index} item={c} />
+          <ClientCard
+            key={index}
+            index={index}
+            item={c}
+            activeIndex={activeIndex}
+            setActiveIndex={setActiveIndex}
+          />
         ))}
       </div>
     </section>
   );
 }
 
-function ClientCard({ item }) {
+function ClientCard({ item, index, activeIndex, setActiveIndex }) {
+  const isMobile = typeof window !== "undefined" && "ontouchstart" in window;
+  const isActive = activeIndex === index;
+
+  const handleTap = () => {
+    if (isMobile) {
+      if (isActive) {
+        setActiveIndex(null); // close if tapping same card
+      } else {
+        setActiveIndex(index); // open tapped card
+      }
+    }
+  };
+
   return (
     <div
-      className="
+      onClick={handleTap}
+      className={`
         group
         min-w-[240px] h-[180px]
-        bg-[#EBE9E9] rounded-lg shadow-sm cursor-pointer
+        rounded-lg shadow-sm cursor-pointer
         flex flex-col items-center justify-center
-        
-        /* Animation */
+        bg-[#EBE9E9]
         transition-all duration-500 ease-in-out
 
-        /* Hover Effects */
-        hover:scale-105 
-        hover:shadow-[0_0_25px_rgba(34,197,94,0.7)]  /* glow effect */
-        hover:bg-green-600 
-      "
+        /* DESKTOP hover */
+        ${
+          !isMobile &&
+          "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.7)] hover:bg-green-600"
+        }
+
+        /* MOBILE active */
+        ${
+          isActive &&
+          "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.7)] bg-green-600"
+        }
+      `}
     >
-      {/* Black Icon (default) */}
+      {/* Black Image */}
       <img
         src={item.imageBlack}
-        className="
-          w-30 -mb-18 opacity-100
-          transition-opacity duration-500 ease-in-out
-          group-hover:opacity-0
-        "
+        className={`
+          w-28 transition-opacity duration-500
+          ${isActive ? "opacity-0" : "opacity-100 group-hover:opacity-0"}
+        `}
       />
 
-      {/* White Icon (on hover) */}
+      {/* White Image */}
       <img
         src={item.imageWhite}
-        className="
-          w-30 opacity-0
-          transition-opacity duration-500 ease-in-out
-          group-hover:opacity-100
-        "
+        className={`
+          w-28 transition-opacity duration-500
+          ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
+        `}
       />
     </div>
   );

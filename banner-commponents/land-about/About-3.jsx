@@ -20,7 +20,7 @@ export default function StatsSection() {
                     
                     {/* Header Text */}
                     <div className="text-center mb-12 sm:mb-16">
-                        <h2 className="text-3xl sm:text-2xl  text-gray-900 tracking-tight mb-3">
+                        <h2 className=" md:text-4xl  text-2xl  text-gray-900 tracking-tight mb-3">
                             More About Us
                         </h2>
                         <p className="text-base text-gray-600 max-w-xl mx-auto">
