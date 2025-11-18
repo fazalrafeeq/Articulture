@@ -35,11 +35,11 @@ const services = [
   },
 ];
 
-// 🔥 Hover Image Swap Component 
+// 🔥 Hover Image Swap Component (DO NOT ADD group HERE)
 function HoverImage({ normal, hover }) {
   return (
-    <div className="relative w-16 h-16 group">
-      {/* Default Image */}
+    <div className="relative w-16 h-16">
+      {/* Normal Image */}
       <Image
         src={normal}
         alt="service-img"
@@ -47,7 +47,7 @@ function HoverImage({ normal, hover }) {
         className="object-contain transition-opacity duration-500 opacity-100 group-hover:opacity-0"
       />
 
-      {/* Hover White Image */}
+      {/* Hover white image */}
       <Image
         src={hover}
         alt="service-img-hover"
@@ -58,12 +58,12 @@ function HoverImage({ normal, hover }) {
   );
 }
 
-// --- SERVICE CARD WITH GREEN GRADIENT HOVER ---
+// --- SERVICE CARD WITH FULL GROUP-HOVER EFFECT ---
 const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
   return (
     <div
       className="
-        group 
+        group
         bg-white border border-gray-200 rounded-xl
         p-6 sm:p-8
         transition-all duration-500
@@ -74,42 +74,43 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
         min-w-[70vw] sm:min-w-[45vw] lg:min-w-0
       "
     >
-      <div>
-        {/* IMAGE SWAP */}
-        <div className="mb-4">
-          <HoverImage normal={imageNormal} hover={imageHover} />
-        </div>
-
-        <h3
-          className="
-            text-xl font-semibold mb-3 
-            text-gray-900 
-            group-hover:text-white
-            transition-colors duration-500
-          "
-        >
-          {title}
-        </h3>
-
-        <p
-          className="
-            text-sm leading-relaxed mb-4 
-            text-gray-500 
-            group-hover:text-white/90
-            transition-colors duration-500
-          "
-        >
-          {description}
-        </p>
+      {/* IMAGE */}
+      <div className="mb-4">
+        <HoverImage normal={imageNormal} hover={imageHover} />
       </div>
 
+      {/* TITLE */}
+      <h3
+        className="
+          text-xl font-semibold mb-3
+          text-gray-900 
+          transition-colors duration-500
+          group-hover:text-white
+        "
+      >
+        {title}
+      </h3>
+
+      {/* DESCRIPTION */}
+      <p
+        className="
+          text-sm leading-relaxed mb-4
+          text-gray-500 
+          transition-colors duration-500
+          group-hover:text-white/90
+        "
+      >
+        {description}
+      </p>
+
+      {/* READ MORE */}
       <a
         href="#"
         className="
           text-sm font-medium inline-flex items-center
           text-green-600 
-          group-hover:text-white
           transition-colors duration-500
+          group-hover:text-white
         "
       >
         Read More{" "}
@@ -137,7 +138,7 @@ export default function ServicesSectionPureCSSScroll() {
           </p>
         </div>
 
-        {/* MOBILE SCROLL */}
+        {/* MOBILE: SCROLL */}
         <div className="lg:hidden">
           <div className="flex gap-4 overflow-x-scroll pb-4 -mx-4 px-4">
             {services.map((service) => (
@@ -154,7 +155,6 @@ export default function ServicesSectionPureCSSScroll() {
             ))}
           </div>
         </div>
-
       </div>
     </section>
   );

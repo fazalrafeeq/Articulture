@@ -6,7 +6,7 @@ const AboutSection = () => {
  // 1. Put the 'md:' prefix INSIDE the variable for proper template literal injection 
  // 2. This ensures the 3-column grid (md:grid-cols-3) can still align them properly.
  const FIXED_DIMENSIONS_MD = 'md:w-[200px] md:h-[500px]'; 
- const FIXED_DIMENSIONS_LG = 'lg:w-[250px] lg:h-[565px]'; // Ensure LG also has its prefix
+ const FIXED_DIMENSIONS_LG = 'lg:w-[280px] lg:h-[565px]'; // Ensure LG also has its prefix
 
  return (
   // Outer container: Centers the content and adds viewport padding
@@ -17,7 +17,7 @@ const AboutSection = () => {
    <div className="max-w-8xl w-full bg-white rounded-xl shadow-2xl p-6 lg:p-10">
     
     {/* Main Content Layout: Stacks on SM, splits 1/3 (text) and 2/3 (images) on LG */}
-    <div className="flex flex-col lg:flex-row gap-8">
+    <div className="flex flex-col lg:flex-row gap-10">
      
      {/* A. Text/Profile Column (Left Side) */}
      <div className={`w-full lg:w-1/3 flex flex-col justify-between p-1 md:min-h-[400px]`}> 
@@ -46,7 +46,7 @@ const AboutSection = () => {
          <p className="text-sm text-gray-500">Sr Architect</p>
         </div>
        </div>
-       <blockquote className="text-gray-600 italic border-l-4  pl-4 py-1">
+       <blockquote className=" italic  py-2">
         "We envision a world where every space we create enhances the quality of life for its occupants while contributing positively to the environment."
        </blockquote>
       </div>
@@ -54,10 +54,10 @@ const AboutSection = () => {
 
      {/* B. IMAGES COLUMN (Right Side) */}
      {/* Removed md:h-1/2 as this conflicts with the fixed height on the images */}
-     <div className="w-full lg:w-2/3">
+     <div className="w-full  lg:w-2/3">
       {/* The wrapper for the scrolling images: Retaining your MD grid logic */}
       <div className="flex overflow-x-scroll snap-x snap-mandatory space-x-4 pb-4 
-              md:grid md:grid-cols-3 md:gap-4 md:overflow-x-hidden md:space-x-0">
+              md:grid md:grid-cols-3 md:gap-1 md:overflow-x-hidden md:space-x-0  ">
        
        {/* 1. First Image (Living Room) - Carousel/Fixed Size */}
        {/* Cleaned up conflicting md:w-auto and md:w-0.5. Using the variable for MD/LG dimensions. */}
