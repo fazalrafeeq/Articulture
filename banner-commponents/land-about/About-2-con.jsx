@@ -1,8 +1,6 @@
 // components/ServicesSectionPureCSSScroll.jsx
 
-"use client";
-
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 
 // --- UPDATED DATA (two images: normal + hover) ---
@@ -37,8 +35,8 @@ const services = [
   },
 ];
 
-// 🔥 Hover + Tap Image Swap
-function HoverImage({ normal, hover, isActive }) {
+// 🔥 Hover Image Swap Component
+function HoverImage({ normal, hover }) {
   return (
     <div className="relative w-16 h-16">
       {/* Normal Image */}
@@ -46,100 +44,63 @@ function HoverImage({ normal, hover, isActive }) {
         src={normal}
         alt="service-img"
         fill
-        className={`
-          object-contain transition-opacity duration-500
-          ${isActive ? "opacity-0" : "opacity-100 group-hover:opacity-0"}
-        `}
+        className="object-contain transition-opacity duration-500 opacity-100 group-hover:opacity-0"
       />
 
-      {/* White Hover Image */}
+      {/* Hover Image */}
       <Image
         src={hover}
         alt="service-img-hover"
         fill
-        className={`
-          object-contain transition-opacity duration-500
-          ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
-        `}
+        className="object-contain transition-opacity duration-500 opacity-0 group-hover:opacity-100"
       />
     </div>
   );
 }
 
-// --- SERVICE CARD WITH TAP + HOVER ---
+// --- SERVICE CARD ---
 const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
-  const [isActive, setIsActive] = useState(false);
-
-  // Detect mobile device (touch support)
-  const isMobile =
-    typeof window !== "undefined" && "ontouchstart" in window;
-
-  const toggleActive = () => {
-    if (isMobile) {
-      setIsActive(!isActive); // TAP toggle
-    }
-  };
-
   return (
     <div
-      onClick={toggleActive}
-      className={`
+      className="
         group
         bg-white border border-gray-200 rounded-xl
         p-6 sm:p-8
         transition-all duration-500
+        hover:scale-105
+        hover:shadow-[0_0_25px_rgba(34,197,94,0.4)]
+        hover:bg-gradient-to-r hover:from-[#3CA270] hover:to-[#045B30]
         flex flex-col justify-between
         min-w-[70vw] sm:min-w-[45vw] lg:min-w-0
+        overflow-hidden
         cursor-pointer
-
-        ${
-          isActive
-            ? "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.4)] bg-gradient-to-r from-[#3CA270] to-[#045B30]"
-            : ""
-        }
-
-        ${
-          !isActive
-            ? "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] hover:bg-gradient-to-r hover:from-[#3CA270] hover:to-[#045B30]"
-            : ""
-        }
-      `}
+      "
     >
       {/* IMAGE */}
       <div className="mb-4">
-        <HoverImage
-          normal={imageNormal}
-          hover={imageHover}
-          isActive={isActive}
-        />
+        <HoverImage normal={imageNormal} hover={imageHover} />
       </div>
 
       {/* TITLE */}
       <h3
-        className={`
-          text-xl font-semibold mb-3 
+        className="
+          text-xl font-semibold mb-3
+          text-gray-900
           transition-colors duration-500
-          ${
-            isActive
-              ? "text-white"
-              : "text-gray-900 group-hover:text-white"
-          }
-        `}
+          group-hover:text-white
+        "
       >
         {title}
       </h3>
 
       {/* DESCRIPTION */}
       <p
-        className={`
+        className="
           text-sm leading-relaxed mb-4
+          text-gray-500
           transition-colors duration-500
-          ${
-            isActive
-              ? "text-white/90"
-              : "text-gray-500 group-hover:text-white/90"
-          }
-        `}
+          group-hover:text-white/90
+        "
       >
         {description}
       </p>
@@ -147,15 +108,12 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
       {/* READ MORE */}
       <a
         href="#"
-        className={`
+        className="
           text-sm font-medium inline-flex items-center
+          text-green-600
           transition-colors duration-500
-          ${
-            isActive
-              ? "text-white"
-              : "text-green-600 group-hover:text-white"
-          }
-        `}
+          group-hover:text-white
+        "
       >
         Read More{" "}
         <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
@@ -189,7 +147,7 @@ export default function ServicesSectionPureCSSScroll() {
               flex gap-4 pb-4 -mx-4 px-4
               overflow-x-scroll
 
-              /* Desktop small screen hover fix */
+              /* Allow hover on desktop in SM mode */
               [@media(hover:hover)]:overflow-x-visible
               [@media(hover:hover)]:justify-center
             "
@@ -200,7 +158,7 @@ export default function ServicesSectionPureCSSScroll() {
           </div>
         </div>
 
-        {/* LG — Grid */}
+        {/* LG GRID */}
         <div className="hidden lg:block">
           <div className="grid grid-cols-4 gap-8">
             {services.map((service) => (
