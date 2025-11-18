@@ -9,33 +9,29 @@ const services = [
     title: "Architecture",
     imageNormal: "/image/im5.png",
     imageHover: "/image/service-1-white.png",
-    description:
-      "At articulate, we believe that every space has a story waiting to be told.",
+    description: "At articulate, we believe that every space has a story waiting to be told.",
   },
   {
     title: "Interior",
     imageNormal: "/image/service-2.png",
     imageHover: "/image/service-2-white.png",
-    description:
-      "At articulate, we believe that every space has a story waiting to be told.",
+    description: "At articulate, we believe that every space has a story waiting to be told.",
   },
   {
     title: "Planning",
     imageNormal: "/image/service-3.png",
     imageHover: "/image/service-3-white.png",
-    description:
-      "At articulate, we believe that every space has a story waiting to be told.",
+    description: "At articulate, we believe that every space has a story waiting to be told.",
   },
   {
     title: "Drawing",
     imageNormal: "/image/service-4.png",
     imageHover: "/image/service-4-white.png",
-    description:
-      "At articulate, we believe that every space has a story waiting to be told.",
+    description: "At articulate, we believe that every space has a story waiting to be told.",
   },
 ];
 
-// IMAGE SWAP WITH TAP
+// IMAGE SWAP COMPONENT
 function HoverImage({ normal, hover, isActive }) {
   return (
     <div className="relative w-16 h-16">
@@ -49,8 +45,7 @@ function HoverImage({ normal, hover, isActive }) {
           ${isActive ? "opacity-0" : "opacity-100 group-hover:opacity-0"}
         `}
       />
-
-      {/* White image */}
+      {/* White version */}
       <Image
         src={hover}
         fill
@@ -64,15 +59,30 @@ function HoverImage({ normal, hover, isActive }) {
   );
 }
 
-// --- SERVICE CARD WITH MOBILE TAP SUPPORT ---
-const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
-  const [isActive, setIsActive] = useState(false);
-
+// SINGLE CARD COMPONENT
+const ServiceCard = ({
+  index,
+  activeIndex,
+  setActiveIndex,
+  title,
+  imageNormal,
+  imageHover,
+  description,
+}) => {
   const isMobile =
     typeof window !== "undefined" && "ontouchstart" in window;
 
+  const isActive = activeIndex === index;
+
   const handleTap = () => {
-    if (isMobile) setIsActive(!isActive);
+    if (isMobile) {
+      // if same card tapped -> close it
+      if (isActive) {
+        setActiveIndex(null);
+      } else {
+        setActiveIndex(index); // activate only this card
+      }
+    }
   };
 
   return (
@@ -85,30 +95,18 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
         transition-all duration-500
         flex flex-col justify-between
         min-w-[70vw] sm:min-w-[45vw] lg:min-w-0
-        overflow-hidden cursor-pointer
+        cursor-pointer overflow-hidden
 
-        ${
-          isActive
-            ? "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.4)] bg-gradient-to-r from-[#3CA270] to-[#045B30]"
-            : ""
-        }
-        ${
-          !isActive
-            ? "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] hover:bg-gradient-to-r hover:from-[#3CA270] hover:to-[#045B30]"
-            : ""
-        }
+        ${isActive ? "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.4)] bg-gradient-to-r from-[#3CA270] to-[#045B30]" : ""}
+        
+        ${!isMobile &&
+        "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] hover:bg-gradient-to-r hover:from-[#3CA270] hover:to-[#045B30]"}
       `}
     >
-      {/* IMAGE */}
       <div className="mb-4">
-        <HoverImage
-          normal={imageNormal}
-          hover={imageHover}
-          isActive={isActive}
-        />
+        <HoverImage normal={imageNormal} hover={imageHover} isActive={isActive} />
       </div>
 
-      {/* TITLE */}
       <h3
         className={`
           text-xl font-semibold mb-3 transition-colors duration-500
@@ -118,7 +116,6 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
         {title}
       </h3>
 
-      {/* DESCRIPTION */}
       <p
         className={`
           text-sm leading-relaxed mb-4 transition-colors duration-500
@@ -128,18 +125,14 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
         {description}
       </p>
 
-      {/* READ MORE */}
       <a
-        href="#"
         className={`
           text-sm font-medium inline-flex items-center transition-colors duration-500
           ${isActive ? "text-white" : "text-green-600 group-hover:text-white"}
         `}
       >
         Read More
-        <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
-          →
-        </span>
+        <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">→</span>
       </a>
     </div>
   );
@@ -147,6 +140,8 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
 
 // MAIN SECTION
 export default function ServicesSectionPureCSSScroll() {
+  const [activeIndex, setActiveIndex] = useState(null); // only one active card
+
   return (
     <section className="py-16 sm:py-24 bg-gray-50">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -161,26 +156,32 @@ export default function ServicesSectionPureCSSScroll() {
           </p>
         </div>
 
-        {/* MOBILE SCROLL */}
+        {/* SM/MOBILE: HORIZONTAL SCROLL */}
         <div className="lg:hidden">
-          <div
-            className="
-              flex gap-4 pb-4 -mx-4 px-4 overflow-x-scroll
-              [@media(hover:hover)]:overflow-x-visible
-              [@media(hover:hover)]:justify-center
-            "
-          >
-            {services.map((service) => (
-              <ServiceCard key={service.title} {...service} />
+          <div className="flex gap-4 overflow-x-scroll pb-4 -mx-4 px-4">
+            {services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                index={index}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                {...service}
+              />
             ))}
           </div>
         </div>
 
-        {/* DESKTOP GRID */}
+        {/* LARGE SCREENS: GRID */}
         <div className="hidden lg:block">
           <div className="grid grid-cols-4 gap-8">
-            {services.map((service) => (
-              <ServiceCard key={service.title} {...service} />
+            {services.map((service, index) => (
+              <ServiceCard
+                key={index}
+                index={index}
+                activeIndex={activeIndex}
+                setActiveIndex={setActiveIndex}
+                {...service}
+              />
             ))}
           </div>
         </div>
