@@ -1,4 +1,5 @@
 import TeamSection from "@/banner-commponents/About-team4";
+import ClientsCarousel from "@/banner-commponents/ClientCard";
 import Hero from "@/banner-commponents/Hero";
 import AboutSection1 from "@/banner-commponents/land-about/About-1";
 import ServiceSection from "@/banner-commponents/land-about/About-2-con";
@@ -18,6 +19,8 @@ export default function Home() {
        <ServiceSection/>
         <StatsSection/>
          <TeamSection/>
+          <ClientsCarousel/>
+          
    </>
    
   );
