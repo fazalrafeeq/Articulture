@@ -7,7 +7,7 @@ const clients = [
   { id: 2, imageBlack: "/image/client-2.png", imageWhite: "/image/client-2-2.png" },
   { id: 3, imageBlack: "/image/client-3.png", imageWhite: "/image/client-3-2.png" },
   { id: 4, imageBlack: "/image/client-4.png", imageWhite: "/image/client-4-2.png" },
-  { id: 5, imageBlack: "/image/client-5.png", imageWhite: "/image/client-5-2.png"},
+  { id: 5, imageBlack: "/image/client-5.png", imageWhite: "/image/client-5-2.png" },
   { id: 6, imageBlack: "/image/client-1.png", imageWhite: "/image/client-1-2.png" },
   { id: 7, imageBlack: "/image/client-2.png", imageWhite: "/image/client-2-2.png" },
   { id: 8, imageBlack: "/image/client-3.png", imageWhite: "/image/client-3-2.png" },
@@ -21,7 +21,7 @@ export default function ClientsCarousel() {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(null);
 
-  // Auto-scroll
+  // Auto-scroll logic
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
@@ -72,11 +72,8 @@ function ClientCard({ item, index, activeIndex, setActiveIndex }) {
 
   const handleTap = () => {
     if (isMobile) {
-      if (isActive) {
-        setActiveIndex(null); // close if tapping same card
-      } else {
-        setActiveIndex(index); // open tapped card
-      }
+      if (isActive) setActiveIndex(null); // Close if tapped again
+      else setActiveIndex(index);         // Open new one
     }
   };
 
@@ -91,36 +88,43 @@ function ClientCard({ item, index, activeIndex, setActiveIndex }) {
         bg-[#EBE9E9]
         transition-all duration-500 ease-in-out
 
-        /* DESKTOP hover */
+        /* Desktop hover */
         ${
           !isMobile &&
           "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.7)] hover:bg-green-600"
         }
 
-        /* MOBILE active */
+        /* Mobile active */
         ${
           isActive &&
           "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.7)] bg-green-600"
         }
       `}
     >
-      {/* Black Image */}
-      <img
-        src={item.imageBlack}
-        className={`
-          w-28 transition-opacity duration-500
-          ${isActive ? "opacity-0" : "opacity-100 group-hover:opacity-0"}
-        `}
-      />
+      {/* FIXED IMAGE BOX — PERFECT ALIGNMENT */}
+      <div className="relative w-28 h-28 flex items-center justify-center">
+        
+        {/* Black Icon */}
+        <img
+          src={item.imageBlack}
+          className={`
+            absolute inset-0 w-full h-full object-contain
+            transition-opacity duration-500
+            ${isActive ? "opacity-0" : "opacity-100 group-hover:opacity-0"}
+          `}
+        />
 
-      {/* White Image */}
-      <img
-        src={item.imageWhite}
-        className={`
-          w-28 transition-opacity duration-500
-          ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
-        `}
-      />
+        {/* White Icon */}
+        <img
+          src={item.imageWhite}
+          className={`
+            absolute inset-0 w-full h-full object-contain
+            transition-opacity duration-500
+            ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
+          `}
+        />
+
+      </div>
     </div>
   );
 }
