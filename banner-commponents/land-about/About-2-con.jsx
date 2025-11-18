@@ -7,7 +7,7 @@ import Image from "next/image";
 const services = [
   {
     title: "Architecture",
-    imageNormal: "/image/im5.png",
+    imageNormal: "/image/im4.png",
     imageHover: "/image/service-1-white.png",
     description:
       "At articulate, we believe that every space has a story waiting to be told.",
@@ -35,11 +35,10 @@ const services = [
   },
 ];
 
-// 🔥 Hover Image Swap Component (DO NOT ADD group HERE)
+// 🔥 Hover Image Swap Component
 function HoverImage({ normal, hover }) {
   return (
     <div className="relative w-16 h-16">
-      {/* Normal Image */}
       <Image
         src={normal}
         alt="service-img"
@@ -47,7 +46,6 @@ function HoverImage({ normal, hover }) {
         className="object-contain transition-opacity duration-500 opacity-100 group-hover:opacity-0"
       />
 
-      {/* Hover white image */}
       <Image
         src={hover}
         alt="service-img-hover"
@@ -58,7 +56,7 @@ function HoverImage({ normal, hover }) {
   );
 }
 
-// --- SERVICE CARD WITH FULL GROUP-HOVER EFFECT ---
+// --- SERVICE CARD ---
 const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
   return (
     <div
@@ -74,12 +72,10 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
         min-w-[70vw] sm:min-w-[45vw] lg:min-w-0
       "
     >
-      {/* IMAGE */}
       <div className="mb-4">
         <HoverImage normal={imageNormal} hover={imageHover} />
       </div>
 
-      {/* TITLE */}
       <h3
         className="
           text-xl font-semibold mb-3
@@ -91,7 +87,6 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
         {title}
       </h3>
 
-      {/* DESCRIPTION */}
       <p
         className="
           text-sm leading-relaxed mb-4
@@ -103,7 +98,6 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
         {description}
       </p>
 
-      {/* READ MORE */}
       <a
         href="#"
         className="
@@ -138,9 +132,17 @@ export default function ServicesSectionPureCSSScroll() {
           </p>
         </div>
 
-        {/* MOBILE: SCROLL */}
+        {/* MOBILE SCROLL (FIXED FOR SM HOVER) */}
         <div className="lg:hidden">
-          <div className="flex gap-4 overflow-x-scroll pb-4 -mx-4 px-4">
+          <div
+            className="
+              flex gap-4 pb-4 -mx-4 px-4
+              overflow-x-scroll
+
+              [@media(hover:hover)]:overflow-x-visible
+              [@media(hover:hover)]:justify-center
+            "
+          >
             {services.map((service) => (
               <ServiceCard key={service.title} {...service} />
             ))}
