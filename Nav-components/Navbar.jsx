@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { HiMenu, HiX } from "react-icons/hi";
+import Link from "next/link";
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -23,8 +24,9 @@ export default function Navbar() {
       {/* Tablet + Desktop Menu (md and up) */}
       <ul className="hidden md:flex items-center gap-6 md:gap-6  lg:gap-10 text-base md:text-sm  font-medium">
         <li className="text-green-400 cursor-pointer hover:text-gray-300">Home</li>
+        <Link href={`/About`}>        <li className="cursor-pointer hover:text-emerald-300 ">About us</li>
+</Link>
         <li className="cursor-pointer hover:text-emerald-300">Portfolio</li>
-        <li className="cursor-pointer hover:text-emerald-300">About us</li>
         <li className="cursor-pointer hover:text-emerald-300">Blog</li>
         <li className="cursor-pointer hover:text-emerald-300">Contact us</li>
       </ul>

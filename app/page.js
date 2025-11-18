@@ -1,3 +1,4 @@
+import Banner2 from "@/banner-commponents/2-Banner/Banner-2";
 import TeamSection from "@/banner-commponents/About-team4";
 import ClientsCarousel from "@/banner-commponents/ClientCard";
 import Hero from "@/banner-commponents/Hero";
@@ -9,6 +10,7 @@ import Topbar from "@/T-bar-components/Topbar";
 
 
 
+
 export default function Home() {
   return (
     <>
@@ -16,10 +18,12 @@ export default function Home() {
      <Hero/>
       <Navbar/>
        <AboutSection1/>
-       <ServiceSection/>
-        <StatsSection/>
-         <TeamSection/>
-          <ClientsCarousel/>
+        <ServiceSection/>
+         <StatsSection/>
+          <TeamSection/>
+           <ClientsCarousel/>
+            <Banner2/>
+          
           
    </>
    
