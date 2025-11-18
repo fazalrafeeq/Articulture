@@ -1,9 +1,9 @@
-// components/ServicesSectionPureCSSScroll.jsx
+"use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 
-// --- UPDATED DATA (two images: normal + hover) ---
+// --- DATA ---
 const services = [
   {
     title: "Architecture",
@@ -35,72 +35,95 @@ const services = [
   },
 ];
 
-// 🔥 Hover Image Swap Component
-function HoverImage({ normal, hover }) {
+// IMAGE SWAP WITH TAP
+function HoverImage({ normal, hover, isActive }) {
   return (
     <div className="relative w-16 h-16">
-      {/* Normal Image */}
+      {/* Normal */}
       <Image
         src={normal}
-        alt="service-img"
         fill
-        className="object-contain transition-opacity duration-500 opacity-100 group-hover:opacity-0"
+        alt=""
+        className={`
+          object-contain transition-opacity duration-500
+          ${isActive ? "opacity-0" : "opacity-100 group-hover:opacity-0"}
+        `}
       />
 
-      {/* Hover Image */}
+      {/* White image */}
       <Image
         src={hover}
-        alt="service-img-hover"
         fill
-        className="object-contain transition-opacity duration-500 opacity-0 group-hover:opacity-100"
+        alt=""
+        className={`
+          object-contain transition-opacity duration-500
+          ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
+        `}
       />
     </div>
   );
 }
 
-// --- SERVICE CARD ---
+// --- SERVICE CARD WITH MOBILE TAP SUPPORT ---
 const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
+  const [isActive, setIsActive] = useState(false);
+
+  const isMobile =
+    typeof window !== "undefined" && "ontouchstart" in window;
+
+  const handleTap = () => {
+    if (isMobile) setIsActive(!isActive);
+  };
+
   return (
     <div
-      className="
+      onClick={handleTap}
+      className={`
         group
         bg-white border border-gray-200 rounded-xl
         p-6 sm:p-8
         transition-all duration-500
-        hover:scale-105
-        hover:shadow-[0_0_25px_rgba(34,197,94,0.4)]
-        hover:bg-gradient-to-r hover:from-[#3CA270] hover:to-[#045B30]
         flex flex-col justify-between
         min-w-[70vw] sm:min-w-[45vw] lg:min-w-0
-        overflow-hidden
-        cursor-pointer
-      "
+        overflow-hidden cursor-pointer
+
+        ${
+          isActive
+            ? "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.4)] bg-gradient-to-r from-[#3CA270] to-[#045B30]"
+            : ""
+        }
+        ${
+          !isActive
+            ? "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.4)] hover:bg-gradient-to-r hover:from-[#3CA270] hover:to-[#045B30]"
+            : ""
+        }
+      `}
     >
       {/* IMAGE */}
       <div className="mb-4">
-        <HoverImage normal={imageNormal} hover={imageHover} />
+        <HoverImage
+          normal={imageNormal}
+          hover={imageHover}
+          isActive={isActive}
+        />
       </div>
 
       {/* TITLE */}
       <h3
-        className="
-          text-xl font-semibold mb-3
-          text-gray-900
-          transition-colors duration-500
-          group-hover:text-white
-        "
+        className={`
+          text-xl font-semibold mb-3 transition-colors duration-500
+          ${isActive ? "text-white" : "text-gray-900 group-hover:text-white"}
+        `}
       >
         {title}
       </h3>
 
       {/* DESCRIPTION */}
       <p
-        className="
-          text-sm leading-relaxed mb-4
-          text-gray-500
-          transition-colors duration-500
-          group-hover:text-white/90
-        "
+        className={`
+          text-sm leading-relaxed mb-4 transition-colors duration-500
+          ${isActive ? "text-white/90" : "text-gray-500 group-hover:text-white/90"}
+        `}
       >
         {description}
       </p>
@@ -108,14 +131,12 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
       {/* READ MORE */}
       <a
         href="#"
-        className="
-          text-sm font-medium inline-flex items-center
-          text-green-600
-          transition-colors duration-500
-          group-hover:text-white
-        "
+        className={`
+          text-sm font-medium inline-flex items-center transition-colors duration-500
+          ${isActive ? "text-white" : "text-green-600 group-hover:text-white"}
+        `}
       >
-        Read More{" "}
+        Read More
         <span className="ml-1 transition-transform duration-300 group-hover:translate-x-1">
           →
         </span>
@@ -124,7 +145,7 @@ const ServiceCard = ({ title, imageNormal, imageHover, description }) => {
   );
 };
 
-// --- MAIN SECTION ---
+// MAIN SECTION
 export default function ServicesSectionPureCSSScroll() {
   return (
     <section className="py-16 sm:py-24 bg-gray-50">
@@ -132,7 +153,7 @@ export default function ServicesSectionPureCSSScroll() {
 
         {/* HEADER */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900 tracking-tight">
+          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900">
             Creating Spaces, Building Connections
           </h2>
           <p className="mt-4 text-base text-gray-500 max-w-2xl mx-auto">
@@ -140,14 +161,11 @@ export default function ServicesSectionPureCSSScroll() {
           </p>
         </div>
 
-        {/* SM / MD — Horizontal Scroll */}
+        {/* MOBILE SCROLL */}
         <div className="lg:hidden">
           <div
             className="
-              flex gap-4 pb-4 -mx-4 px-4
-              overflow-x-scroll
-
-              /* Allow hover on desktop in SM mode */
+              flex gap-4 pb-4 -mx-4 px-4 overflow-x-scroll
               [@media(hover:hover)]:overflow-x-visible
               [@media(hover:hover)]:justify-center
             "
@@ -158,7 +176,7 @@ export default function ServicesSectionPureCSSScroll() {
           </div>
         </div>
 
-        {/* LG GRID */}
+        {/* DESKTOP GRID */}
         <div className="hidden lg:block">
           <div className="grid grid-cols-4 gap-8">
             {services.map((service) => (
