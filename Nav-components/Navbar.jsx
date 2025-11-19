@@ -54,8 +54,9 @@ export default function Navbar() {
 
             <ul className="flex flex-col gap-4 mt-14 text-gray-900 font-semibold text-lg">
               <li className="pb-3 border-b border-gray-300">Home</li>
+              <Link href={`/About`} > <li className="pb-3 border-b border-gray-300">About us</li></Link>
               <li className="pb-3 border-b border-gray-300">Portfolio</li>
-              <li className="pb-3 border-b border-gray-300">About us</li>
+              
               <li className="pb-3 border-b border-gray-300">Blog</li>
               <li className="pb-3 border-b border-gray-300">Contact us</li>
             </ul>
