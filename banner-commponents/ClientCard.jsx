@@ -20,21 +20,30 @@ const clients = [
 export default function ClientsCarousel() {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(null);
+  const pauseRef = useRef(false); // 🔥 pause state
 
-  // Auto-scroll logic
+  // 🔥 Smooth infinite auto-scroll + pause on hover
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
 
-    const interval = setInterval(() => {
-      slider.scrollBy({ left: 240, behavior: "smooth" });
+    let frame;
+    const speed = 0.7;
 
-      if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth) {
-        slider.scrollTo({ left: 0, behavior: "smooth" });
+    const smoothScroll = () => {
+      if (!pauseRef.current) {
+        slider.scrollLeft += speed;
+
+        if (slider.scrollLeft >= slider.scrollWidth - slider.clientWidth) {
+          slider.scrollLeft = 0;
+        }
       }
-    }, 1500);
+      frame = requestAnimationFrame(smoothScroll);
+    };
 
-    return () => clearInterval(interval);
+    frame = requestAnimationFrame(smoothScroll);
+
+    return () => cancelAnimationFrame(frame);
   }, []);
 
   return (
@@ -51,6 +60,8 @@ export default function ClientsCarousel() {
           flex flex-nowrap gap-4
           lg:grid lg:grid-cols-2 lg:grid-flow-col lg:auto-cols-[240px]
         "
+        onMouseEnter={() => (pauseRef.current = true)}   // ⏸ pause
+        onMouseLeave={() => (pauseRef.current = false)}  // ▶ resume
       >
         {[...clients, ...clients].map((c, index) => (
           <ClientCard
@@ -72,8 +83,8 @@ function ClientCard({ item, index, activeIndex, setActiveIndex }) {
 
   const handleTap = () => {
     if (isMobile) {
-      if (isActive) setActiveIndex(null); // Close if tapped again
-      else setActiveIndex(index);         // Open new one
+      if (isActive) setActiveIndex(null);
+      else setActiveIndex(index);
     }
   };
 
@@ -88,23 +99,11 @@ function ClientCard({ item, index, activeIndex, setActiveIndex }) {
         bg-[#EBE9E9]
         transition-all duration-500 ease-in-out
 
-        /* Desktop hover */
-        ${
-          !isMobile &&
-          "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.7)] hover:bg-green-600"
-        }
-
-        /* Mobile active */
-        ${
-          isActive &&
-          "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.7)] bg-green-600"
-        }
+        ${!isMobile && "hover:scale-105 hover:shadow-[0_0_25px_rgba(34,197,94,0.7)] hover:bg-green-600"}
+        ${isActive && "scale-105 shadow-[0_0_25px_rgba(34,197,94,0.7)] bg-green-600"}
       `}
     >
-      {/* FIXED IMAGE BOX — PERFECT ALIGNMENT */}
       <div className="relative w-28 h-28 flex items-center justify-center">
-        
-        {/* Black Icon */}
         <img
           src={item.imageBlack}
           className={`
@@ -114,7 +113,6 @@ function ClientCard({ item, index, activeIndex, setActiveIndex }) {
           `}
         />
 
-        {/* White Icon */}
         <img
           src={item.imageWhite}
           className={`
@@ -123,7 +121,6 @@ function ClientCard({ item, index, activeIndex, setActiveIndex }) {
             ${isActive ? "opacity-100" : "opacity-0 group-hover:opacity-100"}
           `}
         />
-
       </div>
     </div>
   );

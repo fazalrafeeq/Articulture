@@ -6,7 +6,7 @@ const AboutSection = () => {
  // 1. Put the 'md:' prefix INSIDE the variable for proper template literal injection 
  // 2. This ensures the 3-column grid (md:grid-cols-3) can still align them properly.
  const FIXED_DIMENSIONS_MD = 'md:w-[200px] md:h-[400px]'; 
- const FIXED_DIMENSIONS_LG = 'lg:w-[180px] lg:h-[565px]';
+ const FIXED_DIMENSIONS_LG = 'lg:w-[200px] lg:h-[565px]';
  const FIXED_DIMENSIONS_XL = 'xl:w-[235px] lg:h-[565px]'; // Ensure LG also has its prefix
 
  return (
