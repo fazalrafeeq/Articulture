@@ -1,5 +1,6 @@
 "use client"
 
+import Footer from "@/banner-commponents/2-Banner/Footer"
 import LatestNews from "@/banner-commponents/2-Banner/News"
 import Testimonials from "@/banner-commponents/2-Banner/testimonial"
 import TeamSection from "@/banner-commponents/About-team4"
