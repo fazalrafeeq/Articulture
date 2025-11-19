@@ -32,7 +32,7 @@ const newsItems = [
 export default function LatestNews() {
   return (
     <section className="py-16 sm:py-20 bg-white">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-14">
 
         {/* Heading */}
         <h2 className="text-center text-3xl sm:text-4xl font-semibold">
@@ -58,7 +58,7 @@ export default function LatestNews() {
         </div>
 
         {/* MEDIUM + LARGE SCREEN: 3 column grid */}
-        <div className="hidden md:grid grid-cols-3 gap-10 mt-12">
+        <div className="hidden md:grid grid-cols-3  gap-10 mt-12">
           {newsItems.map((item) => (
             <NewsCard key={item.id} item={item} />
           ))}
@@ -71,9 +71,9 @@ export default function LatestNews() {
 
 function NewsCard({ item }) {
   return (
-    <div className="group rounded-3xl cursor-pointer transition-all duration-500">
+    <div className="group rounded-3xl  cursor-pointer transition-all duration-500">
       {/* Image */}
-      <div className="relative w-full h-64 md:h-72 rounded-3xl overflow-hidden">
+      <div className="relative w-full h-64 md:h-72 rounded-3xl  overflow-hidden">
         <Image
           src={item.image}
           alt={item.title}

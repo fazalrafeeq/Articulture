@@ -5,7 +5,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1F1F1F] text-white pt-16 pb-10 lg:p-1">
+    <footer className="bg-[#1F1F1F] text-white pt-16 pb-10 lg:p-10">
       <div className="max-w-[1800px] w-full mx-auto px-4 lg:px-6">
 
         {/* ========== TOP GRID ========== */}
@@ -22,7 +22,7 @@ export default function Footer() {
           <div>
             <div className="mb-6">
               <Image
-                src="/logo-articulate.png"
+                src="/image/logo-articulate.png"
                 alt="Articulate Logo"
                 width={220}
                 height={60}
@@ -36,13 +36,13 @@ export default function Footer() {
             </p>
 
             {/* RESPONSIVE EMAIL INPUT */}
-            <div className="w-full sm:w-[360px] bg-white rounded-full overflow-hidden flex items-center">
+            <div className="w-full sm:w-[360px] bg-white  px-1 rounded-full overflow-hidden flex items-center">
               <input
                 type="text"
                 placeholder="Enter email address"
-                className="px-4 py-3 flex-1 text-black outline-none text-sm sm:text-base"
+                className="px-6 py-2 flex-1 text-black outline-none text-sm sm:text-base"
               />
-              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 font-semibold">
+              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-1  rounded-2xl font-semibold">
                 SEND
               </button>
             </div>

@@ -1,7 +1,11 @@
 "use client"
 
+import AboutSection from "@/banner-commponents/land-about/About-1"
+
 export default function Aboutus(){
     return(
-        <h1>about</h1>
+       <div>
+        <AboutSection/>
+       </div>
     )
 }

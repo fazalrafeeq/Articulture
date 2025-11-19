@@ -18,7 +18,7 @@ export default function Hero(){
             or a custom utility if 'bg-linear-to-t' isn't defined. 
             Assuming 'bg-gradient-to-t' and 'bg-gradient-to-b' are available 
             or using a single inset for simplicity here. */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/10"></div>
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/80"></div>
 
 

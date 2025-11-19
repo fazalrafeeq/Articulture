@@ -1,129 +1,84 @@
 "use client";
 
 import Image from "next/image";
-import { useRef } from "react";
 
-const testimonials = [
+const data = [
   {
-    text: `Articulat transformed our apartment into a warm, modern space that feels uniquely ours. 
-    Every detail — from lighting to furniture — reflects our personality. 
-    The team truly listens!. Professional, creative, and passionate`,
     name: "Kavitha Kumar",
-    username: "@kavitha56",
-    image: "/image/user1.png",
+    user: "@kavitha56",
+    img: "/image/user1.png",
+    text: "Articulat transformed our apartment... passionate",
   },
   {
-    text: `Articulat transformed our apartment into a warm, modern space that feels uniquely ours. 
-    Every detail — from lighting to furniture — reflects our personality. 
-    The team truly listens!. Professional, creative, and passionate`,
     name: "Rahul Raj",
-    username: "@rahulraja56",
-    image: "/image/user2.png",
+    user: "@rahulraja56",
+    img: "/image/user2.png",
+    text: "Articulat transformed our apartment... passionate",
   },
   {
-    text: `Articulat transformed our apartment into a warm, modern space that feels uniquely ours. 
-    Every detail — from lighting to furniture — reflects our personality. 
-    The team truly listens!. Professional, creative, and passionate`,
     name: "Stephy Jo",
-    username: "@kstepja56",
-    image: "/image/user3.png",
+    user: "@kstepja56",
+    img: "/image/user3.png",
+    text: "Articulat transformed our apartment... passionate",
   },
 ];
 
-// ⭐ STAR ICON (yellow)
 const Star = () => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    fill="#FBBF24"
-    viewBox="0 0 24 24"
-    className="w-5 h-5"
-  >
-    <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.834 1.48 8.277L12 18.896l-7.416 4.521 1.48-8.277L0 9.306l8.332-1.151z" />
+  <svg fill="#FBBF24" viewBox="0 0 24 24" className="w-5 h-5">
+    <path d="M12 .6l3.7 7.6 8.3 1.1-6 5.8 1.5 8.3L12 18.9 4.6 23.4l1.5-8.3L0 9.3l8.3-1.1z" />
   </svg>
 );
 
 export default function Testimonials() {
-  const scrollRef = useRef(null);
-
   return (
     <section className="py-20">
-      <h2 className="text-center text-4xl font-semibold mb-4">Testimonials</h2>
+      <h2 className="text-center text-4xl font-semibold mb-10">Testimonials</h2>
 
-      {/* ⭐ MOBILE SCROLL (SM) */}
-      <div className="md:hidden px-4">
-        <div className="flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4">
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={i} {...t} mobile />
-          ))}
-        </div>
-      </div>
-
-      {/* ⭐ TABLET SCROLL (MD) */}
-      <div className="hidden md:block lg:hidden px-6">
-        <div
-          ref={scrollRef}
-          className="
-            flex gap-6 overflow-x-auto scrollbar-hide snap-x snap-mandatory pb-4
-          "
-        >
-          {testimonials.map((t, i) => (
-            <TestimonialCard key={i} {...t} />
-          ))}
-        </div>
-      </div>
-
-      {/* ⭐ DESKTOP GRID (LG) */}
-      <div className="hidden lg:grid lg:grid-cols-3 lg:gap-8 lg:px-4 mt-6">
-        {testimonials.map((t, i) => (
-          <TestimonialCard key={i} {...t} />
+      {/* ONE MAP */}
+      <div
+        className="
+          flex lg:grid lg:grid-cols-3
+          gap-6 lg:gap-10
+          overflow-x-auto lg:overflow-hidden
+          snap-x snap-mandatory lg:snap-none
+          px-4 lg:px-20
+        "
+      >
+        {data.map((t, i) => (
+          <Card key={i} {...t} />
         ))}
       </div>
     </section>
   );
 }
 
-function TestimonialCard({ text, name, username, image, mobile }) {
+function Card({ text, name, user, img }) {
   return (
     <div
-      className={`
-        bg-[#F5F5F5] rounded-3xl p-10 
-        flex flex-col justify-between
-        snap-center
-        ${mobile ? "min-w-[85%]" : "min-w-[420px] lg:min-w-0"}
-      `}
+      className="
+        bg-[#F5F5F5] p-10 rounded-3xl snap-center shadow
+        min-w-[85%]  
+        sm:w-[80%]     /* mobile */
+        md:min-w-[55%]    /* FIXED → tablet smaller */
+        lg:min-w-[95%]        /* large grid */
+      "
     >
-      {/* Quote Icon */}
-      <div className="text-6xl text-gray-700 leading-none mb-6">“</div>
+      <div className="text-6xl text-gray-600 mb-6">“</div>
 
-      {/* Text */}
-      <p className="text-gray-700 text-lg leading-relaxed mb-8 italic">
-        {text}
-      </p>
+      <p className="italic text-gray-700 mb-8">{text}</p>
 
-      {/* User */}
       <div className="flex items-center gap-4">
-        <Image
-          src={image}
-          width={60}
-          height={60}
-          className="rounded-full object-cover"
-          alt={name}
-        />
-
+        <Image src={img} width={60} height={60} alt="" className="rounded-full" />
         <div>
-          <p className="text-lg font-semibold text-gray-900">{name}</p>
-          <p className="text-sm text-gray-500">{username}</p>
+          <p className="font-semibold">{name}</p>
+          <p className="text-sm text-gray-500">{user}</p>
         </div>
       </div>
 
-      {/* ⭐ 5 Stars Row */}
-      <div className="flex items-center gap-1 mt-4">
-        <Star />
-        <Star />
-        <Star />
-        <Star />
-        <Star />
+      <div className="flex gap-1 mt-4">
+        <Star /><Star /><Star /><Star /><Star />
       </div>
     </div>
   );
 }
+

@@ -5,8 +5,9 @@ const AboutSection = () => {
     // Define the fixed dimensions using Tailwind's arbitrary value syntax
  // 1. Put the 'md:' prefix INSIDE the variable for proper template literal injection 
  // 2. This ensures the 3-column grid (md:grid-cols-3) can still align them properly.
- const FIXED_DIMENSIONS_MD = 'md:w-[200px] md:h-[500px]'; 
- const FIXED_DIMENSIONS_LG = 'lg:w-[280px] lg:h-[565px]'; // Ensure LG also has its prefix
+ const FIXED_DIMENSIONS_MD = 'md:w-[200px] md:h-[400px]'; 
+ const FIXED_DIMENSIONS_LG = 'lg:w-[180px] lg:h-[565px]';
+ const FIXED_DIMENSIONS_XL = 'xl:w-[235px] lg:h-[565px]'; // Ensure LG also has its prefix
 
  return (
   // Outer container: Centers the content and adds viewport padding
@@ -23,10 +24,10 @@ const AboutSection = () => {
      <div className={`w-full lg:w-1/3 flex flex-col justify-between p-1 md:min-h-[400px]`}> 
       <div>
        <p className="text-sm uppercase font-medium text-gray-600 mb-2">About us</p>
-       <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+       <h2 className="text-4xl   font-bold text-gray-900 mb-6 leading-tight">
         Creating Spaces, Building Connections
        </h2>
-       <p className="text-gray-700 mb-16">
+       <p className="text-gray-700  mb-16">
         At Articulate, we believe that every space has a story waiting to be told. Our mission is to shape environments that inspire, comfort, and connect — turning walls and materials into experiences that speak to the people who inhabit them.
        </p>
        
@@ -62,7 +63,7 @@ const AboutSection = () => {
        {/* 1. First Image (Living Room) - Carousel/Fixed Size */}
        {/* Cleaned up conflicting md:w-auto and md:w-0.5. Using the variable for MD/LG dimensions. */}
        <div className={`flex-shrink-0 w-4/5 md:col-span-1 
-               h-96 ${FIXED_DIMENSIONS_MD} ${FIXED_DIMENSIONS_LG} relative rounded-lg overflow-hidden snap-center`}>
+               h-96 ${FIXED_DIMENSIONS_MD} ${FIXED_DIMENSIONS_LG}  ${FIXED_DIMENSIONS_XL} relative rounded-lg overflow-hidden snap-center`}>
          <Image 
            src="/image/abt-1.png" 
            alt="Modern Living Room" 
@@ -74,7 +75,7 @@ const AboutSection = () => {
        {/* 2. Second Image (Kitchen) - Carousel/Fixed Size */}
        {/* Cleaned up conflicting md:w-auto. Using the variable for MD/LG dimensions. */}
        <div className={`flex-shrink-0 w-4/5 sm:w-11/12 md:col-span-1 
-               h-96 ${FIXED_DIMENSIONS_MD} ${FIXED_DIMENSIONS_LG} relative rounded-lg overflow-hidden snap-center`}> 
+               h-96 ${FIXED_DIMENSIONS_MD} ${FIXED_DIMENSIONS_LG} ${FIXED_DIMENSIONS_XL} relative rounded-lg overflow-hidden snap-center`}> 
          <Image 
            src="/image/abt-2.png" 
            alt="Modern Kitchen" 
@@ -86,7 +87,7 @@ const AboutSection = () => {
        {/* 3. Third Image (Den/Library) - Carousel/Fixed Size */}
        {/* Cleaned up conflicting md:w-auto. Using the variable for MD/LG dimensions. */}
        <div className={`flex-shrink-0 w-4/5 sm:w-11/12 md:col-span-1 
-               h-96 ${FIXED_DIMENSIONS_MD} ${FIXED_DIMENSIONS_LG} relative rounded-lg overflow-hidden snap-center`}> 
+               h-96 ${FIXED_DIMENSIONS_MD} ${FIXED_DIMENSIONS_LG} ${FIXED_DIMENSIONS_XL} relative rounded-lg overflow-hidden snap-center`}> 
          <Image 
            src="/image/abt-3.png" 
            alt="Cozy Den" 

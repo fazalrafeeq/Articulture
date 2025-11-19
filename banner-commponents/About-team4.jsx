@@ -28,17 +28,17 @@ export default function TeamSection() {
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-12">
           <div>
-            <h2 className="text-4xl font-semibold text-gray-900">
+            <h2 className="text-4xl md:text-2xl font-semibold text-gray-900">
               The People Who Make It Happen
             </h2>
-            <p className="mt-4 text-gray-600 max-w-xl">
+            <p className="mt-4 md:text-xs text-gray-600 max-w-xl">
               At articulate, we believe that every space has a story waiting to be told.
               Our mission is to shape environments.
             </p>
           </div>
 
-          <button className="mt-6 md:mt-0 bg-green-700 text-white px-10 py-2 rounded-full shadow hover:bg-green-800 transition">
-            Learn More
+          <button className="mt-6 md:mt-10 md:px-20 bg-green-700 text-xs text-white px-10 py-2  rounded-full shadow hover:bg-green-800 transition">
+           <p> Learn More</p>
           </button>
         </div>
 
@@ -58,7 +58,7 @@ export default function TeamSection() {
                 <img
                   src={member.image}
                   alt={member.name}
-                  className="w-full h-90 object-cover 
+                  className="w-full h-full object-cover 
                              transition-transform duration-500 
                              group-hover:scale-105"
                 />

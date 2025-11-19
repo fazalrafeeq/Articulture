@@ -62,7 +62,7 @@ export default function WhereWeWork() {
       </div>
 
       {/* ---------------- LARGE SCREENS: GRID ---------------- */}
-      <div className="hidden lg:grid grid-cols-4 gap-8 mt-12 px-8">
+      <div className="hidden lg:grid grid-cols-4 gap-5 mt-12 px-5">
         {categories.map((c, i) => (
           <CategoryCard
             key={i}
@@ -91,7 +91,8 @@ function CategoryCard({ item, index, isActive, handleTap, isMobile }) {
       <div
         className={`
           rounded-[40px] overflow-hidden
-          w-[280px] h-[380px] sm:w-[340px] sm:h-[420px]
+          w-[250px] h-[300px]
+          lg:w-[245px] lg:h-[380px] sm:w-[230px] sm:h-[350px] md:w-[230px] md:h-[400px]  xl:w-[300px] xl:h-[380px]
           shadow-md bg-gray-100
           transition-all duration-500
 
@@ -111,7 +112,7 @@ function CategoryCard({ item, index, isActive, handleTap, isMobile }) {
         <Image
           src={item.image}
           alt={item.title}
-          width={500}
+          width={800}
           height={700}
           className="
             w-full h-full object-cover
