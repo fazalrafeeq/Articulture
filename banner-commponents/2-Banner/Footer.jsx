@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 
 export default function Footer() {
@@ -52,10 +53,14 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Company</h3>
             <ul className="text-gray-400 space-y-4">
-              <li className="hover:text-white cursor-pointer">Our team</li>
-              <li className="hover:text-white cursor-pointer">Services</li>
-              <li className="hover:text-white cursor-pointer">Portfolio</li>
-              <li className="hover:text-white cursor-pointer">About us</li>
+              <Link  href={`/About`} > <li  className="hover:text-white py-1 -mt-2  cursor-pointer">About us</li></Link>
+
+              <Link href={`/Portfolio`}><li className="hover:text-white py-2 cursor-pointer">Portfolio</li></Link>
+              
+              <Link href={"/"} > <li className="hover:text-white cursor-pointer py-2  ">Our team</li></Link>
+              
+              <Link href={"/"}  ><li className="hover:text-white py-2 cursor-pointer">Services</li></Link>
+              
             </ul>
           </div>
 
