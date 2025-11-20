@@ -8,9 +8,9 @@ import AboutBanner from "@/banner-commponents/About/About-Banner"
 import ServiceSection from "@/banner-commponents/About/Abt-Service"
 import WhereWeWork from "@/banner-commponents/land-about/Category"
 import ClientsCarousel from "@/banner-commponents/land-about/ClientCard"
-import AboutSection from "@/banner-commponents/land-about/About-1"
 import Navbar from "@/banner-commponents/land-about/Navbar"
 import Topbar from "@/banner-commponents/land-about/Topbar"
+import AboutSection2 from "@/banner-commponents/About/abt-section-2"
 
 export default function Aboutus(){
     return(
@@ -18,7 +18,7 @@ export default function Aboutus(){
         <Topbar/>
         <Navbar/>
         <AboutBanner/>
-        <AboutSection/>
+        <AboutSection2/>
         <ServiceSection/>
         <TeamSection/>
         <ClientsCarousel/>

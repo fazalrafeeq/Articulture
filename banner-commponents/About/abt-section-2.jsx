@@ -1,60 +1,45 @@
 // components/AboutSection.jsx
 import Image from "next/image";
 
-const AboutSection = () => {
+const AboutSection2 = () => {
   return (
     <div className="flex justify-center p-4 sm:p-8 lg:p-12 bg-gray-50">
       <div className="max-w-8xl w-full bg-white rounded-xl shadow-2xl p-6 lg:p-10">
 
         <div className="flex flex-col lg:flex-row gap-10">
 
-          {/* LEFT SIDE */}
-          <div className="w-full lg:w-1/3 flex flex-col justify-between p-1 md:min-h-[400px]">
-            <div>
-              <p className="text-sm uppercase font-medium text-gray-600 mb-2">
-                About us
-              </p>
+          {/* LEFT SIDE — CLEAN, NO BUTTON, NO LOGO */}
+          <div className="w-full lg:w-1/3 flex flex-col justify-start p-1">
 
-              <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
-                Creating Spaces, Building Connections
-              </h2>
+            <p className="text-sm uppercase font-medium text-gray-600 mb-2">
+              About us
+            </p>
 
-              <p className="text-gray-700 mb-16">
-                At Articulate, we believe every space has a story waiting to be
-                told. Our mission is to shape environments that inspire,
-                comfort, and connect — turning walls and materials into
-                experiences that speak to the people who inhabit them.
-              </p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              Creating Spaces, Building Connections
+            </h2>
 
-              <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 mb-8">
-                Learn More
-              </button>
-            </div>
+            {/* Short description */}
+            <p className="text-gray-700 mb-6">
+              We design meaningful spaces that reflect purpose,
+              elevate everyday living, and create lasting impact for
+              the people who experience them.
 
-            {/* PROFILE */}
-            <div className="mt-1 pt-1 border-t border-gray-100">
-              <div className="flex items-center mb-4">
-                <div className="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gray-200">
-                  <Image
-                    src="/image/abt-1-icon-1.png"
-                    alt="Cole Palmer"
-                    width={48}
-                    height={48}
-                    className="object-cover"
-                  />
-                </div>
-                <div>
-                  <p className="font-bold text-gray-900">Cole Palmer</p>
-                  <p className="text-sm text-gray-500">Sr Architect</p>
-                </div>
-              </div>
+            </p>
 
-              <blockquote className="italic py-2">
-                "We envision a world where every space we create enhances the
-                quality of life for its occupants while contributing positively
-                to the environment."
-              </blockquote>
-            </div>
+
+            <p className="text-gray-700 mb-6">
+                
+              At articulate, we believe that every space has a story waiting to be told.
+               Our mission is to shape environments that inspire, comfort,
+               and connect  turning walls and materials into experiences that speak to the people who inhabit them.
+                At articulate, we believe that every space has a story waiting to be told.
+            </p>
+            <p className="text-gray-700 mb-6">
+                  At articulate, we believe that every space has a story waiting to be told.
+               Our mission is to shape environments that inspire, comfort,
+               and connect  turning walls and materials into experiences that speak to the people who inhabit them.
+            </p>
           </div>
 
           {/* RIGHT SIDE IMAGES */}
@@ -72,7 +57,7 @@ const AboutSection = () => {
                   snap-center rounded-lg overflow-hidden relative
                   w-[80%] h-[320px]
                   md:w-full md:h-[400px]
-                  lg:w-full lg:h-[560px]
+                  lg:w-full lg:h-[700px]
                   xl:w-full xl:h-[600px]
                 "
               >
@@ -90,7 +75,7 @@ const AboutSection = () => {
                   snap-center rounded-lg overflow-hidden relative
                   w-[80%] h-[320px]
                   md:w-full md:h-[400px]
-                  lg:w-full lg:h-[560px]
+                  lg:w-full lg:h-[700px]
                   xl:w-full xl:h-[600px]
                 "
               >
@@ -108,7 +93,7 @@ const AboutSection = () => {
                   snap-center rounded-lg overflow-hidden relative
                   w-[80%] h-[320px]
                   md:w-full md:h-[400px]
-                  lg:w-full lg:h-[560px]
+                  lg:w-full lg:h-[700px]
                   xl:w-full xl:h-[600px]
                 "
               >
@@ -129,4 +114,4 @@ const AboutSection = () => {
   );
 };
 
-export default AboutSection;
+export default AboutSection2;
