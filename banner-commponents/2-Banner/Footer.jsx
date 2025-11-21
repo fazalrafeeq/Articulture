@@ -59,7 +59,7 @@ export default function Footer() {
               
               <Link href={"/"} > <li className="hover:text-white cursor-pointer py-2  ">Our team</li></Link>
               
-              <Link href={"/"}  ><li className="hover:text-white py-2 cursor-pointer">Services</li></Link>
+              <Link href={"/Contact"}  ><li className="hover:text-white py-2 cursor-pointer">Services</li></Link>
               
             </ul>
           </div>
@@ -68,7 +68,7 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Useful</h3>
             <ul className="text-gray-400 space-y-4">
-              <li className="hover:text-white cursor-pointer">Blog</li>
+              <Link href={`/Blog`} >        <li className="hover:text-white mb-4 -mt-1 cursor-pointer">Blog</li></Link>
               <li className="hover:text-white cursor-pointer">Legal & Privacy</li>
               <li className="hover:text-white cursor-pointer">Client Portal</li>
               <li className="hover:text-white cursor-pointer">FAQ’s</li>
