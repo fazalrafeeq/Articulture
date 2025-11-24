@@ -28,7 +28,7 @@ export default function TeamSection() {
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-12">
           <div>
-            <h2 className="text-4xl md:text-2xl font-semibold text-gray-900">
+            <h2 className="text-4xl md:text-3xl  font-semibold text-gray-900">
               The People Who Make It Happen
             </h2>
             <p className="mt-4 md:text-xs text-gray-600 max-w-xl">
@@ -37,7 +37,7 @@ export default function TeamSection() {
             </p>
           </div>
 
-          <button className="mt-6 md:mt-10 md:px-20 bg-green-700 text-xs text-white px-10 py-2  rounded-full shadow hover:bg-green-800 transition">
+          <button className="mt-6 md:mt-10 md:px-15 bg-gradient-to-r from-[#3CA270] to-[#163C29]  hover:from-[#163C29] hover:to-[#33734F]  text-xs text-white px-10 py-3  rounded-full shadow hover:bg-green-800 transition">
            <p> Learn More</p>
           </button>
         </div>
@@ -65,12 +65,12 @@ export default function TeamSection() {
               </div>
 
               {/* Text Hover */}
-              <h3
-                className="text-xl font-semibold text-black mt-4 
+              <h1
+                className="text-2xl  font-bold text-black mt-4 
                            group-hover:text-green-700 transition"
               >
                 {member.name}
-              </h3>
+              </h1>
 
               <p
                 className="text-gray-800 text-lg 

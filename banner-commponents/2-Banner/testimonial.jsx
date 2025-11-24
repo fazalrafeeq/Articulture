@@ -7,21 +7,22 @@ const data = [
     name: "Kavitha Kumar",
     user: "@kavitha56",
     img: "/image/user1.png",
-    text: "Articulat transformed our apartment... passionate",
+    text: "Articulat transformed our apartment into a warm, modern space that feels uniquely ours. Every detail — from lighting to furniture — reflects our personality. The team truly listens!. Professional, creative, and passionate",
   },
   {
     name: "Rahul Raj",
     user: "@rahulraja56",
     img: "/image/user2.png",
-    text: "Articulat transformed our apartment... passionate",
+    text: "Articulat transformed our apartment into a warm, modern space that feels uniquely ours. Every detail — from lighting to furniture — reflects our personality. The team truly listens!. Professional, creative, and passionate",
   },
   {
     name: "Stephy Jo",
     user: "@kstepja56",
     img: "/image/user3.png",
-    text: "Articulat transformed our apartment... passionate",
+    text: "Articulat transformed our apartment into a warm, modern space that feels uniquely ours. Every detail — from lighting to furniture — reflects our personality. The team truly listens!. Professional, creative, and passionate",
   },
 ];
+
 
 const Star = () => (
   <svg fill="#FBBF24" viewBox="0 0 24 24" className="w-5 h-5">
@@ -38,7 +39,7 @@ export default function Testimonials() {
       <div
         className="
           flex lg:grid lg:grid-cols-3
-          gap-6 lg:gap-10
+          gap-6 lg:gap-10 font-extralight text-base
           overflow-x-auto lg:overflow-hidden
           snap-x snap-mandatory lg:snap-none
           px-4 lg:px-20
@@ -63,7 +64,7 @@ function Card({ text, name, user, img }) {
         lg:min-w-[95%]        /* large grid */
       "
     >
-      <div className="text-6xl text-gray-600 mb-6">“</div>
+      <div className="text-7xl text-gray-600 mb-6">“</div>
 
       <p className="italic text-gray-700 mb-8">{text}</p>
 

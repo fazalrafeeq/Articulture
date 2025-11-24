@@ -4,9 +4,9 @@ import ContactsBanner from "@/banner-commponents/Contact/contacts-banner";
 import MapSection from "@/banner-commponents/Contact/Map";
 import Navbar from "@/banner-commponents/land-about/Navbar";
 import Topbar from "@/banner-commponents/land-about/Topbar";
-import { Divide } from "lucide-react";
 
-export default function Contacts(){
+
+export default function Contact(){
     return(
         <div>
             <Topbar/>

@@ -148,11 +148,11 @@ export default function ServicesSectionPureCSSScroll() {
 
         {/* HEADER */}
         <div className="text-center mb-12 sm:mb-16">
-          <h2 className="text-3xl sm:text-4xl font-semibold text-gray-900">
+          <h2 className="text-base sm:text-4xl font-semibold text-gray-900">
             Creating Spaces, Building Connections
           </h2>
-          <p className="mt-4 text-base text-gray-500 max-w-2xl mx-auto">
-            At articulate, we believe that every space has a story waiting to be told.
+          <p className="mt-4 text-base  font-medium text-black max-w-2xl mx-auto">
+     At articulate, we believe that every space has a story waiting to be told. Our <br />mission is to shape environments that inspire
           </p>
         </div>
 

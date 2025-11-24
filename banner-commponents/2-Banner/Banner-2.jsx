@@ -20,7 +20,7 @@ export default function Banner2() {
           px-6 text-center
         ">
           <p className="  
-            text-white text-xl md:text-2xl lg:text-3xl 
+            text-gray-300 text-xl md:text-2xl lg:text-4xl 
              italic font-medium leading-relaxed
           ">
             From bold architectural lines to refined interior details,<br />

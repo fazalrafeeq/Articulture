@@ -20,7 +20,7 @@ export default function StatsSection() {
                     
                     {/* Header Text */}
                     <div className="text-center mb-12 sm:mb-16">
-                        <h2 className=" md:text-4xl  text-2xl  text-gray-900 tracking-tight mb-3">
+                        <h2 className=" md:text-3xl  text-sm  font-semibold text-gray-900 tracking-tight mb-3">
                             More About Us
                         </h2>
                         <p className="text-base text-gray-600 max-w-xl mx-auto">
@@ -36,7 +36,7 @@ export default function StatsSection() {
                                 className="flex flex-col items-center justify-center p-2"
                             >
                                 {/* Stat Number: Larger and bolder for impact */}
-                                <p className="text-2xl sm:text-xl lg:text-5xl font-medium text-gray-900 mb-1 -mt-7 leading-tight">
+                                <p className="text-2xl sm:text-xl lg:text-5xl font-semibold text-gray-900 mb-1 -mt-7 leading-tight">
                                     {stat.number}
                                 </p>
                                 {/* Label: Clear, readable text */}

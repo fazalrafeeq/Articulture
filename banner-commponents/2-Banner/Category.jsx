@@ -22,13 +22,13 @@ export default function WhereWeWork() {
   };
 
   return (
-    <section className="py-16">
-      <h2 className="text-center lg:text-4xl text-2xl font-semibold">
+    <section className="py-5">
+      <h2 className="text-center lg:text-4xl text-2xl font-bold">
         Where We Work
       </h2>
 
       <p className="text-center text-gray-500 max-w-2xl mx-auto p-6">
-        At articulate, we believe that every space has a story waiting to be told.
+        At articulate, we believe that every space has a story waiting to be told. <br />
         Our mission is to shape environments that inspire.
       </p>
 
@@ -94,7 +94,7 @@ function CategoryCard({ item, index, isActive, handleTap, isMobile }) {
         />
       </div>
 
-      <h3 className="text-xl font-semibold mt-4">{item.title}</h3>
+      <h3 className="text-2xl font-semibold mt-4">{item.title}</h3>
     </div>
   );
 }

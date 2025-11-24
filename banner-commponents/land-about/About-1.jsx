@@ -26,7 +26,7 @@ const AboutSection = () => {
                 experiences that speak to the people who inhabit them.
               </p>
 
-              <button className="bg-green-600 hover:bg-green-700 text-white font-semibold py-3 px-8 rounded-full transition duration-300 mb-8">
+              <button className="   bg-gradient-to-r from-[#3CA270] to-[#163C29]  hover:from-[#163C29] hover:to-[#33734F] text-white font-semibold py-2 px-12 rounded-full transition duration-300 mb-8">
                 Learn More
               </button>
             </div>
@@ -44,14 +44,15 @@ const AboutSection = () => {
                   />
                 </div>
                 <div>
-                  <p className="font-bold text-gray-900">Cole Palmer</p>
+                  <p className="font-sm text-gray-900">Cole Palmer</p>
                   <p className="text-sm text-gray-500">Sr Architect</p>
                 </div>
               </div>
 
-              <blockquote className="italic py-2">
-                "We envision a world where every space we create enhances the
-                quality of life for its occupants while contributing positively
+              <blockquote className="italic py-2 text-gray-400 font-light text-xm">
+                "We envision a world where <br /> every space
+                 we create <br /> enhances the
+                quality of life for <br /> its occupants while  <br />contributing positively
                 to the environment."
               </blockquote>
             </div>

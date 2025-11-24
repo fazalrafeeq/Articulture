@@ -3,7 +3,7 @@ import Footer from "@/banner-commponents/2-Banner/Footer";
 import LatestNews from "@/banner-commponents/2-Banner/News";
 import Testimonials from "@/banner-commponents/2-Banner/testimonial";
 import TeamSection from "@/banner-commponents/land-about/About-team4";
-import WhereWeWork from "@/banner-commponents/land-about/Category";
+import WhereWeWork from "@/banner-commponents/2-Banner/Category";
 import ClientsCarousel from "@/banner-commponents/land-about/ClientCard";
 import Hero from "@/banner-commponents/land-about/Hero";
 import AboutSection1 from "@/banner-commponents/land-about/About-1";

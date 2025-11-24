@@ -35,11 +35,11 @@ export default function LatestNews() {
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-14">
 
         {/* Heading */}
-        <h2 className="text-center text-3xl sm:text-4xl font-semibold">
+        <h2 className="text-center text-3xl sm:text-3xl font-semibold">
           Latest News And Update
         </h2>
-        <p className="text-center text-gray-600 mt-4 max-w-2xl mx-auto">
-          At articulate, we believe that every space has a story waiting to be told. 
+        <p className="text-center text-gray-600 mt-4 font-semibold max-w-2xl mx-auto">
+          At articulate, we believe that every space has a story waiting to be <br /> told. 
           Our mission is to shape environments that inspire
         </p>
 
@@ -82,7 +82,7 @@ function NewsCard({ item }) {
         />
 
         {/* Date Badge */}
-        <div className="absolute bottom-4 left-4 bg-green-600 text-white px-5 py-1 rounded-full text-sm font-medium">
+        <div className="absolute bottom-4 left-4 bg-gradient-to-r from-[#3CA270] to-[#163C29]  hover:from-[#163C29] hover:to-[#33734F] text-white px-5 py-1 rounded-full text-sm font-medium">
           {item.date}
         </div>
       </div>
@@ -93,14 +93,14 @@ function NewsCard({ item }) {
       </h3>
 
       {/* Description */}
-      <p className="mt-3 text-gray-600 leading-relaxed">
+      <p className="mt-3 text-gray-600 text-xs leading-relaxed">
         {item.description}
       </p>
 
       {/* Read More */}
       <a
         href="#"
-        className="mt-4 inline-flex items-center text-green-600 font-medium group-hover:text-green-700 transition"
+        className=" inline-flex items-center text-green-600 font-medium group-hover:text-green-700 transition"
       >
         Read More
         <span className="ml-1 group-hover:translate-x-1 transition">→</span>
