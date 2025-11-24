@@ -144,7 +144,7 @@ export default function ServicesSectionPureCSSScroll() {
 
   return (
     <section className="py-16 sm:py-24 bg-gray-50">
-      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-8xl mx-auto p-1 px-5 sm:px-6 lg:px-8">
 
         {/* HEADER */}
         <div className="text-center mb-12 sm:mb-16">

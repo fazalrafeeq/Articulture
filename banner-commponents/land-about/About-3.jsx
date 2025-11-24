@@ -11,8 +11,8 @@ const stats = [
 
 export default function StatsSection() {
     return (
-        <section className=" p-7 py-7 -sm:py-24 bg-gray-50">
-            <div className="max-w-1500  mx-auto px-4 sm:px-6 lg:px-8">
+        <section className=" p-7 py-2 -sm:py-24 px-4 bg-gray-50">
+            <div className="max-w-1500  mx-auto px-2 sm:px-6 lg:px-8">
                 
                 {/* Main Content Card with Enhanced Shadow and subtle hover */}
                 <div className="bg-white rounded-[40px] shadow-2xl shadow-gray-200 

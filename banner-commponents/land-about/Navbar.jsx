@@ -31,7 +31,7 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Menu */}
-      <ul className="hidden md:flex items-center gap-6 lg:gap-7 text-xs font-semibold">
+      <ul className="hidden md:flex items-center gap-6 lg:gap-8  font-bold">
         <Link href="/">
           <li className={`cursor-pointer ${linkStyle("/")}`}>Home</li>
         </Link>

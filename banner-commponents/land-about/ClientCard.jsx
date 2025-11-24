@@ -47,9 +47,9 @@ export default function ClientsCarousel() {
   }, []);
 
   return (
-    <section className="w-full py-12">
-      <h2 className="text-center text-3xl font-semibold">Clients Who Trust Our Vision</h2>
-      <p className="text-center text-gray-600 mt-2">
+    <section className="w-full  py-12">
+      <h2 className="text-center px-4 text-3xl font-semibold">Clients Who Trust Our Vision</h2>
+      <p className="text-center px-5 text-gray-600 mt-2">
       At articulate, we believe that every space has a story waiting to be told.
            <br />   Our mission is to shape environments.
       </p>

@@ -73,7 +73,7 @@ const AboutSection = () => {
                   snap-center rounded-lg overflow-hidden relative
                   w-[80%] h-[320px]
                   md:w-full md:h-[400px]
-                  lg:w-full lg:h-[560px]
+                  lg:w-full lg:h-[750px]
                   xl:w-full xl:h-[600px]
                 "
               >
@@ -91,7 +91,7 @@ const AboutSection = () => {
                   snap-center rounded-lg overflow-hidden relative
                   w-[80%] h-[320px]
                   md:w-full md:h-[400px]
-                  lg:w-full lg:h-[560px]
+                  lg:w-full lg:h-[750px]
                   xl:w-full xl:h-[600px]
                 "
               >
@@ -109,7 +109,7 @@ const AboutSection = () => {
                   snap-center rounded-lg overflow-hidden relative
                   w-[80%] h-[320px]
                   md:w-full md:h-[400px]
-                  lg:w-full lg:h-[560px]
+                  lg:w-full lg:h-[750px]
                   xl:w-full xl:h-[600px]
                 "
               >

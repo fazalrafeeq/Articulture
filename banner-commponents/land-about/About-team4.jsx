@@ -23,7 +23,7 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="py-20 p-12">
+    <section className="py-20 p-6">
       <div className="container mx-auto px-4">
         {/* Heading */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-12">
