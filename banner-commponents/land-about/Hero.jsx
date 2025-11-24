@@ -19,7 +19,7 @@ export default function Hero() {
         <h1 className="text-4xl font-semibold leading-snug 
                        sm:text-4xl sm:leading-tight 
                        md:text-5xl md:leading-tight 
-                       lg:text-6xl lg:leading-snug">
+                       lg:text-6xl  lg:leading-18">
           Sculpting Your Dream Space
         </h1>
 

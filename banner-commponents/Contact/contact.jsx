@@ -7,8 +7,8 @@ export default function ContactSection() {
         <div>
           <p className="text-sm text-gray-500 mb-2">Get in touch</p>
 
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight mb-6">
-            We are always ready to help you and answer your questions
+          <h2 className="text-3xl sm:text-4xl lg:text-4xl font-bold leading-tight mb-6">
+            We are always ready to help you  <br /> and answer your <br /> questions
           </h2>
 
           <p className="text-gray-500 max-w-lg mb-10">
@@ -93,7 +93,7 @@ export default function ContactSection() {
 
             <button
               type="submit"
-              className="bg-[#2d8c5f] text-white px-8 py-3 rounded-full hover:bg-[#24714c] transition shadow-md"
+              className=" bg-gradient-to-r from-[#3CA270] to-[#163C29] text-white px-8 py-4 rounded-full hover:bg-[#24714c] transition shadow-md"
             >
               Sent a Message
             </button>

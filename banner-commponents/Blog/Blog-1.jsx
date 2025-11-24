@@ -58,7 +58,7 @@ export default function BlogPage1() {
                   className="object-cover"
                 />
                 {/* DATE BADGE */}
-                <span className="absolute bottom-4 left-4 bg-green-600 text-white px-4 py-2 rounded-full text-sm">
+                <span className="absolute bottom-4 left-4 bg-gradient-to-r from-[#3CA270] to-[#163C29] text-white px-4 py-2 rounded-full text-sm">
                   {post.date}
                 </span>
               </div>
@@ -69,12 +69,12 @@ export default function BlogPage1() {
               </h2>
 
               {/* DESCRIPTION */}
-              <p className="text-gray-600 mb-4">
+              <p className="mt-3 text-gray-600 text-xs leading-relaxed">
                 {post.desc}
               </p>
 
               {/* READ MORE */}
-              <button className="text-green-600 font-medium flex items-center gap-2 hover:underline">
+              <button className="text-green-600 cursor-pointer text-xm font-medium flex items-center gap-2 hover:underline">
                 Read More →
               </button>
             </div>

@@ -18,7 +18,7 @@ export default function PortfolioBanner() {
 
       {/* Text */}
       <div className="absolute inset-0 flex items-center justify-center">
-        <h1 className="text-white  text-1xl sm:text-4xl md:text-6xl font-semibold tracking-wide">
+        <h1 className="text-white  text-1xl sm:text-4xl md:text-6xl font-bold tracking-wide">
           Portfolio
         </h1>
       </div>

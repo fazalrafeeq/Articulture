@@ -7,7 +7,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-[#1F1F1F] text-white pt-16 pb-10 lg:p-10">
-      <div className="max-w-[1800px] w-full mx-auto px-4 lg:px-6">
+      <div className="max-w-[1800px] w-full mx-auto px-4 lg:px-4">
 
         {/* ========== TOP GRID ========== */}
         <div
@@ -30,7 +30,7 @@ export default function Footer() {
               />
             </div>
 
-            <p className="text-gray-300 leading-relaxed w-[95%] mb-8">
+            <p className="text-gray-400 text-xm leading-relaxed w-[95%] mb-8">
               There are fashions in building. Behind the fashions lie
               economic and technological reasons, and these fashions
               exclude all but a few genuinely different possibilities.
@@ -43,7 +43,7 @@ export default function Footer() {
                 placeholder="Enter email address"
                 className="px-6 py-2 flex-1 text-black outline-none text-sm sm:text-base"
               />
-              <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-1  rounded-2xl font-semibold">
+              <button className="cursor-pointer bg-gradient-to-r from-[#389468] to-[#1e6d45] hover:from-[#255d46] to-[#1e5439]  text-white px-6 py-1  rounded-2xl font-semibold">
                 SEND
               </button>
             </div>
@@ -79,16 +79,16 @@ export default function Footer() {
           <div>
             <h3 className="text-lg font-semibold mb-6">Get in touch</h3>
 
-            <p className="text-gray-300 mb-4">articulate@gmail.com</p>
+            <p className="text-gray-400 mb-4">articulate@gmail.com</p>
 
             <h3 className="text-lg font-semibold mb-4">Address</h3>
 
-            <p className="text-gray-300 leading-relaxed mb-4">
+            <p className="text-gray-400 leading-relaxed mb-4">
               9235 Bayberry Drive<br />
               Hendersonville, NC 28792
             </p>
 
-            <p className="text-gray-300 leading-relaxed">
+            <p className="text-gray-400 leading-relaxed">
               8457 Beechwood Drive<br />
               Monroe Township, NJ 08831
             </p>
@@ -96,23 +96,23 @@ export default function Footer() {
         </div>
 
         {/* COPYRIGHT BAR */}
-        <div className="border-t border-gray-700 mt-12 pt-6 flex flex-col md:flex-row justify-between items-center gap-4">
+        <div className="border-t border-gray-600 mt-5 gap-4  flex flex-col md:flex-row justify-between items-center ">
 
           <p className="text-gray-400 text-center">
             © 2025 Ambiguous. All right reserved. Developed by{" "}
             <span className="text-yellow-400">Flipmaxxgloball.l.p</span>
           </p>
 
-          <div className="flex gap-4">
-            <div className="w-12 h-12 bg-green-600 rounded-md flex items-center justify-center hover:bg-green-700 cursor-pointer">
+          <div className="flex gap-3">
+            <div className="w-10 h-10 bg-gradient-to-r from-[#389468] to-[#1e6d45]  rounded-md flex items-center justify-center hover:from-[#008d49] to-[#048042]  cursor-pointer">
               <FaFacebookF size={20} />
             </div>
 
-            <div className="w-12 h-12 bg-[#333] rounded-md flex items-center justify-center hover:bg-[#444] cursor-pointer">
+            <div className="w-10 h-10 bg-[#333] rounded-md flex items-center justify-center hover:bg-[#444] cursor-pointer">
               <FaInstagram size={20} />
             </div>
 
-            <div className="w-12 h-12 bg-[#333] rounded-md flex items-center justify-center hover:bg-[#444] cursor-pointer">
+            <div className="w-10 h-10 bg-[#333] rounded-md flex items-center justify-center hover:bg-[#444] cursor-pointer">
               <FaLinkedinIn size={20} />
             </div>
           </div>

@@ -72,7 +72,7 @@ export default function PortfolioCategory() {
             {/* FIXED SIZE BADGE BUTTON */}
             <div className="absolute bottom-4 left-4">
               <span className="
-                bg-green-600 text-white 
+                bg-gradient-to-r from-[#3CA270] to-[#163C29] text-white 
                 w-32 text-center 
                 py-2 rounded-full 
                 text-sm font-medium shadow-md block
