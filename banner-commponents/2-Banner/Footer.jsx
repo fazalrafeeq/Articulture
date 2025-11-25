@@ -7,7 +7,7 @@ import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 export default function Footer() {
   return (
     <footer className="bg-[#1F1F1F] text-white pt-16 pb-10 lg:p-10">
-      <div className="max-w-[1800px] w-full mx-auto px-4 lg:px-4">
+      <div className="max-w-8xl w-fit mx-auto px-4 lg:px-0 p-0.5">
 
         {/* ========== TOP GRID ========== */}
         <div
@@ -96,14 +96,14 @@ export default function Footer() {
         </div>
 
         {/* COPYRIGHT BAR */}
-        <div className="border-t border-gray-600 mt-5 gap-4  flex flex-col md:flex-row justify-between items-center ">
+        <div className="border-t border-gray-600  mt-5 gap-4   flex flex-col md:flex-row justify-between items-center ">
 
           <p className="text-gray-400 text-center">
             © 2025 Ambiguous. All right reserved. Developed by{" "}
             <span className="text-yellow-400">Flipmaxxgloball.l.p</span>
           </p>
 
-          <div className="flex gap-3">
+          <div className="flex mt-5 gap-3">
             <div className="w-10 h-10 bg-gradient-to-r from-[#389468] to-[#1e6d45]  rounded-md flex items-center justify-center hover:from-[#008d49] to-[#048042]  cursor-pointer">
               <FaFacebookF size={20} />
             </div>

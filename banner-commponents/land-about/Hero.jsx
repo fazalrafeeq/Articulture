@@ -19,11 +19,11 @@ export default function Hero() {
         <h1 className="text-4xl font-semibold leading-snug 
                        sm:text-4xl sm:leading-tight 
                        md:text-5xl md:leading-tight 
-                       lg:text-6xl  lg:leading-18">
+                       lg:text-6xl  lg:leading-1">
           Sculpting Your Dream Space
         </h1>
 
-        <p className="text-sm mt-3 font-medium mb-6 text-gray-200 
+        <p className="text-sm mt-3 mb-6 text-gray-200 
                       sm:text-base sm:mt-4 sm:mb-8 
                       md:text-lg">
           From bold architectural lines to refined interior details, we bring your vision <br />
