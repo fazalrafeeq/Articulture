@@ -100,7 +100,7 @@ export default function Footer() {
 
           <p className="text-gray-400 text-center">
             © 2025 Ambiguous. All right reserved. Developed by{" "}
-            <span className="text-yellow-400">Flipmaxxgloball.l.p</span>
+            <span className="text-yellow-400">Hello.company</span>
           </p>
 
           <div className="flex mt-5 gap-3">

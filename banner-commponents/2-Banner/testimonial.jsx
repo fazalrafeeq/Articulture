@@ -64,7 +64,7 @@ function Card({ text, name, user, img }) {
         lg:min-w-[95%]        /* large grid */
       "
     >
-      <div className=" md:text-[150px] text-[100px]    -mt-20 -mb-25 text-gray-600 ">“</div>
+      <div className=" md:text-[150px] text-[50px]    lg:-mt-20 lg:-mb-25 text-gray-600 ">“</div>
 
       <p className="italic text-gray-700 mb-8">{text}</p>
 
