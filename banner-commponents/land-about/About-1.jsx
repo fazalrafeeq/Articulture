@@ -32,7 +32,7 @@ const AboutSection = () => {
             </div>
 
             {/* PROFILE */}
-            <div className="mt-1 pt-1 border-t border-gray-100">
+            <div className="mt-1 pt-1 ">
               <div className="flex items-center mb-4">
                 <div className="w-12 h-12 rounded-full overflow-hidden mr-3 bg-gray-200">
                   <Image

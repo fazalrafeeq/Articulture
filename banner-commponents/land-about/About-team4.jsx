@@ -31,7 +31,7 @@ export default function TeamSection() {
             <h2 className="text-4xl md:text-3xl  font-semibold text-gray-900">
               The People Who Make It Happen
             </h2>
-            <p className="mt-4 md:text-xs text-gray-600 max-w-xl">
+            <p className="mt-4 md:text-xm text-gray-600 max-w-xl">
               At articulate, we believe that every space has a story waiting to be told.
               Our mission is to shape environments.
             </p>
