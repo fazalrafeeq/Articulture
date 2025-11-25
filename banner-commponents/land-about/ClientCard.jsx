@@ -15,14 +15,20 @@ const clients = [
   { id: 10, imageBlack: "/image/client-5.png", imageWhite: "/image/client-5-2.png" },
   { id: 11, imageBlack: "/image/client-1.png", imageWhite: "/image/client-1-2.png" },
   { id: 12, imageBlack: "/image/client-2.png", imageWhite: "/image/client-2-2.png" },
+  { id: 13, imageBlack: "/image/client-3.png", imageWhite: "/image/client-3-2.png" },
+  { id: 14, imageBlack: "/image/client-4.png", imageWhite: "/image/client-4-2.png" },
+  { id: 15, imageBlack: "/image/client-5.png", imageWhite: "/image/client-5-2.png" },
+  { id: 16, imageBlack: "/image/client-1.png", imageWhite: "/image/client-1-2.png" },
+  { id: 17, imageBlack: "/image/client-2.png", imageWhite: "/image/client-2-2.png" },
+  { id: 18, imageBlack: "/image/client-3.png", imageWhite: "/image/client-3-2.png" },
+  { id: 19, imageBlack: "/image/client-4.png", imageWhite: "/image/client-4-2.png" },
 ];
 
 export default function ClientsCarousel() {
   const sliderRef = useRef(null);
   const [activeIndex, setActiveIndex] = useState(null);
-  const pauseRef = useRef(false); // 🔥 pause state
+  const pauseRef = useRef(false);
 
-  // 🔥 Smooth infinite auto-scroll + pause on hover
   useEffect(() => {
     const slider = sliderRef.current;
     if (!slider) return;
@@ -42,16 +48,17 @@ export default function ClientsCarousel() {
     };
 
     frame = requestAnimationFrame(smoothScroll);
-
     return () => cancelAnimationFrame(frame);
   }, []);
 
   return (
-    <section className="w-full  py-12">
-      <h2 className="text-center px-4 text-3xl font-semibold">Clients Who Trust Our Vision</h2>
+    <section className="w-full py-12">
+      <h2 className="text-center px-4 text-3xl font-semibold">
+        Clients Who Trust Our Vision
+      </h2>
       <p className="text-center px-5 text-gray-600 mt-2">
-      At articulate, we believe that every space has a story waiting to be told.
-           <br />   Our mission is to shape environments.
+        At articulate, we believe that every space has a story waiting to be told.
+        <br /> Our mission is to shape environments.
       </p>
 
       <div
@@ -59,10 +66,12 @@ export default function ClientsCarousel() {
         className="
           mt-10 overflow-x-auto scrollbar-hide px-4
           flex flex-nowrap gap-4
-          lg:grid lg:grid-cols-2 lg:grid-flow-col lg:auto-cols-[240px]
+
+          lg:grid lg:grid-flow-col lg:auto-cols-[240px]
+          xl:grid xl:grid-flow-col xl:auto-cols-[240px]
         "
-        onMouseEnter={() => (pauseRef.current = true)}   // ⏸ pause
-        onMouseLeave={() => (pauseRef.current = false)}  // ▶ resume
+        onMouseEnter={() => (pauseRef.current = true)}
+        onMouseLeave={() => (pauseRef.current = false)}
       >
         {[...clients, ...clients].map((c, index) => (
           <ClientCard
